@@ -17,8 +17,8 @@ public class Main {
         ArrayList<Task> tasksData = dm.loadData();
 
         System.out.println("Printing deadlines");
-        printDeadlines(tasksData);
-
+       // printDeadlines(tasksData);
+        printDataWithStreams(tasksData);
         System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
 
     }
@@ -37,6 +37,13 @@ public class Main {
         for (Task t : tasksData) {
             System.out.println(t);
         }
+
+    }
+
+    public static void printDataWithStreams(ArrayList<Task> tasks) {
+        System.out.println("Printing using streams");
+        tasks.stream()
+                .forEach(System.out::println);
     }
 
     public static void printDeadlines(ArrayList<Task> tasksData) {
